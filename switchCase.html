@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+
+	<title> Atividade Switch Case </title>
+
+	<style type="text/css">
+		.pai{
+			background-color: #32ff7e;
+		}
+	    .botao {
+		width: 500px;
+		height: 50px;
+		font-size: 20px;
+		border-radius: 8px;
+        background-color: #32ff7e; 
+        color: black; 
+        border: 4px solid white;
+        }
+        .botao:hover {
+        background-color: white;
+        color: green;
+        }
+        #botaoSelecionado:hover {
+        color: #32ff7e;
+        }
+        .esconder{
+        	display: none;
+        }
+
+        .exibir{
+        	display: block;
+        	background-color: orange;
+        	font-size: 25px;
+            width: 500px;
+            height: 60px;
+        }
+        
+	</style>
+
+</head>
+
+<body>
+
+	<div class="pai">
+
+		<center> <h1> Orientações contra o COVID-19 </h1> </center>
+
+		<form>
+		<center> <br> <input type="button" value="Você é idoso?" class="botao" onclick="pegarDados('Você é idoso?');"></center>
+		<center> <br> <input type="button" value="Sofre de problemas respiratórios? " class="botao" onclick="pegarDados('Sofre de problemas respiratórios?');"></center>
+		<center> <br> <input type="button" value=" É diabético? " class="botao" onclick="pegarDados('É diabético?');"></center>
+		<center> <br> <input type="button" value="É saudável?" class="botao" onclick="pegarDados('É saudável?');"></center> <br>
+		</form>
+
+    </div>
+
+    <center><p class="remover" id="botaoSelecionado"></p></center>
+
+    <script type="text/javascript">
+        
+    	function pegarDados (qualBotao) {
+        switch (qualBotao) {
+        case 'Você é idoso?':{
+        let div = document.getElementById("botaoSelecionado");
+        div.classList.remove("remover");
+        div.classList.add("exibir");
+        document.getElementById("botaoSelecionado").innerHTML = "Fique em casa, peça para fazerem as compras para você!";
+        break;
+        }
+
+        case 'Sofre de problemas respiratórios?':{
+        let div = document.getElementById("botaoSelecionado");
+        div.classList.remove("remover");
+        div.classList.add("exibir");
+        document.getElementById("botaoSelecionado").innerHTML = "Fique em casa, tome sol e faça exercícios leves!";
+        break;
+        }
+
+        case 'É diabético?':{
+        let div = document.getElementById("botaoSelecionado");
+        div.classList.remove("remover");
+        div.classList.add("exibir");
+        document.getElementById("botaoSelecionado").innerHTML = "Fique em casa e cuide da sua saúde!";
+        break;
+        }
+
+        case 'É saudável?':{
+        let div = document.getElementById("botaoSelecionado");
+        div.classList.remove("remover");
+        div.classList.add("exibir");
+        document.getElementById("botaoSelecionado").innerHTML = "Faça compras pelos mais idosos, mas use máscaras!";
+        break;
+        }
+
+        default:
+        document.getElementById("botaoSelecionado").innerHTML = "erro";
+
+    }
+    
+}
+    </script>
+</body>
+</html>
